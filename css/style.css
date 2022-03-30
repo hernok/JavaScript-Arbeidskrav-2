@@ -1,0 +1,9 @@
+#house-nav-bar {
+	display: flex;
+	width: 100%;
+}
+#house-names {
+	display: flex;
+	text-align: ;
+	list-style: none;
+}
