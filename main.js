@@ -3,13 +3,20 @@ async function getStudentApi(url) {
 	const jsonData = await student.json();
 	console.log(jsonData);
 	for (let i = 0; i < student.length; i++) {
-		if (student.name == true) {
-			document.getElementById("test").innerHTML = "We are alive!";
-		} else {
-			document.getElementById("test").innerHTML = "I'm dead!";
-		}
+		getStudentApi().then((json) => {
+			document.getElementById("test").innerHTML = `${json["name"]}`;
+		});
 	}
 }
 function getStudentOnLoad() {
 	getStudentApi("http://hp-api.herokuapp.com/api/characters");
+}
+
+function addStudent() {
+	student.push({
+		name: inputStudentName.value,
+		house: inputHouseName.value,
+		age: inputAge.value,
+		alive: inputAlive.value,
+	});
 }
