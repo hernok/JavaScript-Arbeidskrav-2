@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,9 +16,97 @@ body {
   position: relative;
   background-color: bisque;
   height: 100vh;
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+}
+/**************************************/
+
+
+.spell_bubble {
+  position: absolute;
+  height: 10rem;
+  margin: 0 0 0 2rem;
+  visibility: hidden;
 }
 
+/**************************************/
+/*Styles the banners on top of the screen*/
+#house-banners {
+  position: relative;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  margin: 1rem 0;
+}
+
+#banner-img {
+  height: 300px;
+  cursor: pointer;
+  padding-top: 2rem;
+}
+
+.banner {
+  display:flex;
+  flex-direction: column;
+  justify-self: center;
+  gap:20px;
+}
+/**************************************/
+/*Here comes some button styling for our page*/
+.banner_btn  {
+ padding: 1rem 2rem;
+ border: none;
+ border-radius: 10px;
+ font-size: 1.1rem;
+ font-weight: 500;
+ max-width: 280px;
+ margin-left:16px;
+}
+.huffelpuff {
+  background-color: #fae675;
+  color:#590a59;
+}
+.gryffindor {
+  background-color: #ae4a4a;
+  color:#febc42;
+}
+.ravenclaw {
+  background-color: #382982;
+  color:#f7c665;
+}
+.slytherin {
+  background-color: #3b9e82;
+  color:#204431;
+}
+.classroom-button {
+  position: relative;
+}
+
+.delete-btn {
+  height: 1.5rem;
+  width: 4rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  margin: 0 0.15rem;
+
+}
+
+.delete-btn {
+  border:none;
+  border-radius: 6px;
+  background-color: #f0f7ff;
+  color: #cf2d3e;
+}
+.delete-btn:hover {
+  background-color: #dbe9fa;
+  color: #94202b;
+}
+/**************************************/
+/* CHARACTER LIST STYLING*/
+
 #character_list_container {
+  position: relative;
   padding: 4rem;
   margin: 0 auto;
   max-width: 1000px;
@@ -31,15 +121,14 @@ body {
 }
 
 .hp_characters {
-  list-style-type: none;
-  background-color: #eaeaea;
-  border-radius: 3px;
+  list-style: none;
+  border-radius: 6px;
   padding: 10px 20px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
-    "name image"
-    "house image";
+    " name image "
+    " house image ";
   text-align: left;
 }
 
@@ -51,32 +140,72 @@ body {
 .hp_characters > p {
   grid-area: house;
   margin: 0;
-  margin-top: -18px;
+  margin-top: -10px;
 }
 
-.hp_characters > img {
-  max-height: 100px;
+.hp_characters  > img {
+  max-height: 150px;
   grid-area: image;
 }
 
-#professor-snydes-animation {
-  position: relative;
-  display: flex;
+.default-image {
+  border-radius: 6px;
 }
 
-#snydes_one,
-#snydes_two {
+/* Here we style our Proffessor Snapes*/
+.professor-snapes-container {
   cursor: pointer;
-  position: absolute;
+  position:relative;
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  margin-left:10px;
+  
+}
+.snapes_list {
+  background-color: #48389a;
+  color:#f7c665;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    " name image "
+    " house image ";
+  text-align: left;
 }
 
-#snydes_two {
-  visibility: hidden;
-  opacity: 0;
+.snapes_list > h2 {
+  grid-area: name;
+  margin-bottom: 0px;
+   position: relative;
+}
+.snapes_list  > img {
+  max-height: 150px;
+  grid-area: image;
 }
 
-#spell_bubble {
-  position: relative;
-  height: 10rem;
-  margin: 0 0 0 20rem;
+.snapes_list  > p {
+  grid-area: house;
+  margin: 0;
+  margin-top: -18px;
+}
+
+.snapes_list:hover {
+ transform: scale(1.1);
+}
+.snapes_list:hover + .spell_bubble{
+  visibility: visible;
+}
+
+#start-classroom {
+  padding: 0.8rem 2rem;
+ border: none;
+ border-radius: 10px;
+ font-size: 1.1rem;
+ font-weight: 500;
+ margin:16px;
+ background-color: #382982;
+ color:#f7c665;
 }

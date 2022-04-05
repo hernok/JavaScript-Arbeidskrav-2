@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/page2.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
     <title>Potion classroom with Professor Snyde</title>
 </head>
 <body>
 
 <div id="main-container">
-    <h1> Professor Snydes potion classroom</h1>
-    <div id="professor-snydes-animation">
-        <img id="snydes_one" src="img/snape-default.png"/>
-        <img id="snydes_two" src="img/snape-spellcast.png"/>
+
+    <div id="house-banners">
+        <div class="banner"><img id="banner-img" src="/img/Gryffindor-banner.png"> <button class="banner_btn gryffindor">Get Gryffindor students</button></div>
+        <div class="banner"><img id="banner-img" src="/img/Ravenclaw-banner.png"> <button class="banner_btn ravenclaw">Get Ravenclaw students</button></div>
+        <div class="banner"><img id="banner-img" src="/img/Huffelpuff-banner.png"> <button class="banner_btn huffelpuff">Get Hufflepuff students</button></div>
+        <div class="banner"><img id="banner-img" src="/img/Slytherin-banner.png"> <button class="banner_btn slytherin">Get Slytherin students</button></div>
     </div>
-    <div>
-        <img id="spell_bubble"src="img/spell-bubble.png"/>
+    <h1> Professor Snapes potion classroom</h1>
+    <div class="professor-snapes-container">
+      <ul id="snapes-card-info"></ul>
+      <div class="bubble-container">
+        <img class="spell_bubble"src="img/spell-bubble.png"/>
     </div>
+    </div>
+    <div class="classroom-button"><button id="start-classroom">Start Class</button></div>
     <div id="character_list_container">
         <ul id="characters-list"></ul>
     </div>
