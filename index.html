@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="author" content="Gruppe 404!" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="css/style.css" />
-		<title>JavaScript Arbeidskrav 2</title>
-	</head>
-	<body onload="getStudentOnLoad()">
-		<p id="test"></p>
-		<div id="house-nav-bar">
-			<ul id="house-names">
-				<li id="Gryffindor">Gryffindor</li>
-				<li id="Slytherin">Slytherin</li>
-				<li id="Hufflepuff">Hufflepuff</li>
-				<li id="Ravenclaw">Ravenclaw</li>
-			</ul>
-			<div id="input-containers">
-				<form action="">
-					<input type="text" placeholder="Name" id="input-name" />
-					<input type="text" placeholder="House" id="input-house" />
-					<input type="number" placeholder="Age" id="input-age" />
-					<input type="text" placeholder="Alive?" id="input-alive" />
-				</form>
-				<button onclick="addStudent()">Legg til</button>
-			</div>
-		</div>
-		<script src="main.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Gruppe 404!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>JavaScript Arbeidskrav 2</title>
+  </head>
+  <body onload="getStudentOnLoad()">
+    <p id="test"></p>
+    <div id="house-nav-bar">
+      <ul id="house-names">
+        <li id="Gryffindor">Gryffindor</li>
+        <li id="Slytherin">Slytherin</li>
+        <li id="Hufflepuff">Hufflepuff</li>
+        <li id="Ravenclaw">Ravenclaw</li>
+      </ul>
+      <div id="input-containers">
+        <form action="">
+          <input type="text" placeholder="Name" id="input-name" />
+          <input type="text" placeholder="House" id="input-house" />
+          <input type="number" placeholder="Age" id="input-age" />
+          <input type="text" placeholder="Alive?" id="input-alive" />
+        </form>
+        <button onclick="addStudent()">Legg til</button>
+      </div>
+    </div>
+    <div id="characters"></div>
+    <script src="main.js"></script>
+  </body>
 </html>
