@@ -1,9 +1,17 @@
-#house-nav-bar {
-	display: flex;
-	width: 100%;
+.hidden-house {
+	display: none;
 }
+#house-nav-bar {
+  display: flex;
+  width: 100%;
+}
+
 #house-names {
-	display: flex;
-	text-align: ;
-	list-style: none;
+  display: flex;
+  text-align: center;
+  list-style: none;
+}
+
+#house {
+  font-size: 3000px;
 }

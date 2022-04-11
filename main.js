@@ -1,71 +1,85 @@
-let characterElements = document.getElementById("characters");
+function filterByHouse(self) {
+	let currentHouse = "House: " + self.innerHTML;
+	let characters =  document.getElementById("characters").children;
+	
+	for (let i = 0; i < characters.length; i++) {
+		
+		let character = characters[i];
+		let characterHouse = characters[i].children[2].innerHTML;
 
-function getItems(page) {
+		if (characterHouse != currentHouse) {
+			character.classList.add("hidden-house");
+		}else {
+			character.classList.remove("hidden-house");
+		};
+	}
+}
+
+function queryCharactersApi() {
   var req = new XMLHttpRequest();
 
   req.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      let charObj = JSON.parse(this.responseText);
-      for (let i = 0; i < charObj.length; i++) {
-        let p = document.createElement("p");
-        let name = document.createTextNode(charObj[i].name);
+      let characters = JSON.parse(this.responseText);
+      for (let i = 0; i < characters.length; i++) {
+        let character = characters[i];
+        if (character.image === "") {
+          character.image = "/assets/defaultimage.png";
+        }
+		
 
-        let p2 = document.createElement("p2");
-        let alive = document.createTextNode(charObj[i].alive);
+        let p1 = document.createElement("p");
+        let name = document.createTextNode(character.name);
 
-        let p3 = document.createElement("p3");
-        let species = document.createTextNode(charObj[i].species);
+        let p2 = document.createElement("p");
+        let alive = document.createTextNode("Alive= " + character.alive);
 
-        let p4 = document.createElement("p4");
-        let house = document.createTextNode(charObj[i].house);
+        let p3 = document.createElement("p");
+        let house = document.createTextNode("House: " + character.house);
 
-        let p5 = document.createElement("p5");
-        let dateOfBirth = document.createTextNode(charObj[i].dateOfBirth);
+        let p4 = document.createElement("p");
+        let yearOfBirth = document.createTextNode(character.yearOfBirth);
 
-        let p6 = document.createElement("img");
-        let image = document.createTextNode(charObj[i].image);
+        let p5 = document.createElement("img");
+        let image = document.createTextNode(character.image);
+		
+		let newCharacter =  document.createElement("div");
 
-        p.appendChild(name);
-        document.body.appendChild(p);
+		if (character.house !== "Gryffindor") {
+			newCharacter.classList.add("hidden-house");
+}
+        p1.appendChild(name);
+        newCharacter.appendChild(p1);
 
         p2.appendChild(alive);
-        p2.appendChild(document.createTextNode(" "));
-        document.body.appendChild(p2);
+      
+        newCharacter.appendChild(p2);
 
-        p3.appendChild(species);
-        p3.appendChild(document.createElement("br"));
+        p3.appendChild(house);
+		
+        newCharacter.appendChild(p3);
+        
+        p4.appendChild(yearOfBirth);
+		
+        newCharacter.appendChild(p4);
 
-        p4.appendChild(house);
-        document.body.appendChild(p4);
-        p4.appendChild(document.createElement("br"));
+        p5.appendChild(image);
+        p5.setAttribute("src", character.image);
 
-        p5.appendChild(dateOfBirth);
-        document.body.appendChild(p5);
-        p5.appendChild(document.createElement("br"));
+        p5.height = "200";
+        newCharacter.appendChild(p5);
 
-        p6.appendChild(image);
-        p6.setAttribute("src", charObj[i].image);
-
-        p6.height = "200";
-        document.body.appendChild(p6);
+		document.getElementById("characters").appendChild(newCharacter)
       }
     }
   };
 
-  req.open("GET", "http://hp-api.herokuapp.com/api/characters?page=");
+  req.open("GET", "http://hp-api.herokuapp.com/api/characters");
   req.send();
 }
 
-for (let i = 1; i <= 150; i++) {
-  getItems(i);
-}
+queryCharactersApi();
 
-/*
-
-        characterElements.innerHTML +=
-          "<div class='character-wrapper' id='character-list'" + i;
-
-*/
 
 /*
 
@@ -77,4 +91,5 @@ function addStudent() {
 		alive: inputAlive.value,
 	});
 }
+
 */

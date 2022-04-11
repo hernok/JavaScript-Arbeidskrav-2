@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>JavaScript Arbeidskrav 2</title>
   </head>
-  <body onload="getStudentOnLoad()">
-    <p id="test"></p>
+  <body>
     <div id="house-nav-bar">
       <ul id="house-names">
-        <li id="Gryffindor">Gryffindor</li>
-        <li id="Slytherin">Slytherin</li>
-        <li id="Hufflepuff">Hufflepuff</li>
-        <li id="Ravenclaw">Ravenclaw</li>
+        <button id="gryffindor-btn" onclick="filterByHouse(this)">Gryffindor</button>
+        <button id="slytherin-btn" onclick="filterByHouse(this)">Slytherin</button>
+        <button id="hufflepuff-btn" onclick="filterByHouse(this)">Hufflepuff</button>
+        <button id="ravenclaw-btn" onclick="filterByHouse(this)">Ravenclaw</button>
       </ul>
       <div id="input-containers">
         <form action="">
