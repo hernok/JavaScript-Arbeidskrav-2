@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="author" content="Gruppe 404!" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>JavaScript Arbeidskrav 2</title>
-  </head>
-  <body>
-	  <div id="main-container">
-
-    <div id="house-banners">
-        <div class="banner"><img id="banner-img" src="/assets/global/Gryffindor-banner.png"> <button class="banner_btn gryffindor">Get Gryffindor students</button></div>
-        <div class="banner"><img id="banner-img" src="/assets/global/Ravenclaw-banner.png"> <button class="banner_btn ravenclaw">Get Ravenclaw students</button></div>
-        <div class="banner"><img id="banner-img" src="/assets/global/Huffelpuff-banner.png"> <button class="banner_btn huffelpuff">Get Hufflepuff students</button></div>
-        <div class="banner"><img id="banner-img" src="/assets/global/Slytherin-banner.png"> <button class="banner_btn slytherin">Get Slytherin students</button></div>
-    </div>
-
-      
-	  <div class="container">
-            <h1>Harry Potter Yearbook!</h1>
-			<div id="input-container">
-				<div id="searchWrapper">
-                <input
-                    type="text"
-                    name="searchBar"
-                    id="searchBar"
-                    placeholder="Search for a character"
-                />
-            </div>
-        <div id="inputs">
-        	<input type="text" placeholder="Name" id="input-name" /><br>
-        	<input type="text" placeholder="House" id="input-house" /><br>
-        	<input type="number" placeholder="Age" id="input-age" /><br>
-        	<input type="text" placeholder="Alive?" id="input-alive" /><br>
-			<input type="text" placeholder="Image URL" id="input-image"><br>
-			<button onclick="addStudent()">Legg til</button>
-        </div>
-        
-      
-            
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Gruppe 404!" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<title>JavaScript Arbeidskrav 2</title>
+	</head>
+	<body onload="loadCharacters()">
+		<div id="main-container">
+			<div id="house-banners">
+				<div class="banner" onclick="filterByHouse('gryffindor')">
+					<img id="banner-img" src="/assets/global/Gryffindor-banner.png"> 
+					<button class="banner_btn gryffindor">Gryffindor</button>
+				</div>
+				<div class="banner" onclick="filterByHouse('ravenclaw')">
+					<img id="banner-img" src="/assets/global/Ravenclaw-banner.png"> 
+					<button class="banner_btn ravenclaw">Ravenclaw</button>
+				</div>
+				<div class="banner" onclick="filterByHouse('hufflepuff')">
+					<img id="banner-img" src="/assets/global/Huffelpuff-banner.png"> 
+					<button class="banner_btn hufflepuff">Hufflepuff</button>
+				</div>
+				<div class="banner" onclick="filterByHouse('slytherin')">
+					<img id="banner-img" src="/assets/global/Slytherin-banner.png"> 
+					<button class="banner_btn slytherin">Slytherin</button>
+				</div>
 			</div>
-            <ul id="charactersList"></ul>
-        </div>
-    
-    <div id="characters"></div>
-    <script src="/script/main.js"></script>
-  </body>
+			<div class="container">
+				<h1>Harry Potter Yearbook!</h1>
+				<div id="input-container">
+					<div id="searchWrapper">
+						<input type="text" name="searchBar" id="searchBar" placeholder="Search for a character"/>
+					</div>
+					<div id="inputs">
+						<input type="text" placeholder="Name" id="input-name" /><br>
+						<input type="text" placeholder="House" id="input-house" /><br>
+						<input type="number" placeholder="Year of birth" id="input-age" /><br>
+						<input type="text" placeholder="Alive?" id="input-alive" /><br>
+						<input type="text" placeholder="Image URL" id="input-image"><br>
+						<button onclick="addStudent()">Legg til</button>
+					</div>	
+				</div>
+				<ul id="charactersList"></ul>
+			</div>	
+		</div>
+		<script src="/script/main.js"></script>
+	</body>
 </html>

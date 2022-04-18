@@ -38,7 +38,7 @@ body {
 .banner {
 	display:flex;
 	flex-direction: column;
-	justify-self: center;
+	
 	gap:20px;
 }
 
@@ -52,7 +52,7 @@ body {
 	margin-left:16px;
 }
 
-.huffelpuff {
+.hufflepuff {
 	background-color: #fae675;
 	color:#590a59;
 }
@@ -105,7 +105,49 @@ body {
 	grid-gap: 1.2rem;
 }
 
-.hp_characters {
+.gryffindor-card {
+	list-style: none;
+	border-radius: 6px;
+	border: 5px solid black;
+	padding: 5px 5px;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas:
+	  " name image "
+	  " house image "
+	  " age image"
+	  " alive image";
+	text-align: left;
+}
+.ravenclaw-card {
+	list-style: none;
+	border-radius: 6px;
+	border: 5px solid black;
+	padding: 5px 5px;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas:
+	  " name image "
+	  " house image "
+	  " age image"
+	  " alive image";
+	text-align: left;
+}
+.hufflepuff-card {
+	list-style: none;
+	border-radius: 6px;
+	border: 5px solid black;
+	padding: 5px 5px;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas:
+	  " name image "
+	  " house image "
+	  " age image"
+	  " alive image";
+	text-align: left;
+}
+.slytherin-card {
 	list-style: none;
 	border-radius: 6px;
 	border: 5px solid black;
@@ -120,37 +162,37 @@ body {
 	text-align: left;
 }
 
-.hp_characters > h2 {
+.hp-characters > h2 {
 	grid-area: name;
 	margin-bottom: 0px;
 }
 
-.hp_characters > .house {
+.hp-characters > .house {
 	grid-area: house;
 	margin: 0;
 	margin-top: 10px;
 }
-.hp_characters > .age {
+.hp-characters > .age {
 	grid-area: age;
 	margin: 0;
 	margin-top: 10px;
 }
-.hp_characters > .alive {
+.hp-characters > .alive {
 	grid-area: alive;
 	margin: 0;
 	margin-top: 10px;
 }
 
 
-.hp_characters  > img {
+.hp-characters  > img, .image{
 	max-height: 150px;
 	grid-area: image;
 }
 
-.default-image {
-	border-radius: 6px;
+.dead{
+	color:red;
+	margin-top: 10px;
 }
-
 
 .hidden-house {
 	display: none;
@@ -172,4 +214,7 @@ body {
 .character{
 	border: 2px solid black;
 	margin: 10px;
+}
+.-card{
+	display: none;
 }
