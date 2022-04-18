@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 2rem 0;
+}
+
+body {
+  position: relative;
+  background-color: bisque;
+  height: 100vh;
+  font-family: "Lobster", cursive;
+  font-weight: 400;
+}
+/**************************************/
+
+.spell_bubble {
+  position: absolute;
+  height: 10rem;
+  margin: 0 0 0 2rem;
+  visibility: hidden;
+}
+
+/**************************************/
+/*Styles the banners on top of the screen*/
+#house-banners {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  margin: 1rem 0;
+}
+
+#banner-img {
+  height: 300px;
+  cursor: pointer;
+  padding-top: 2rem;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  gap: 20px;
+}
+/**************************************/
+/*Here comes some button styling for our page*/
+.banner_btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 280px;
+  margin-left: 16px;
+}
+.huffelpuff {
+  background-color: #fae675;
+  color: #590a59;
+}
+.gryffindor {
+  background-color: #ae4a4a;
+  color: #febc42;
+}
+.ravenclaw {
+  background-color: #382982;
+  color: #f7c665;
+}
+.slytherin {
+  background-color: #3b9e82;
+  color: #204431;
+}
+.classroom-button {
+  position: relative;
+}
+
+.delete-btn {
+  height: 1.5rem;
+  width: 4rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  margin: 0 0.15rem;
+}
+
+.delete-btn {
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f7ff;
+  color: #cf2d3e;
+}
+.delete-btn:hover {
+  background-color: #dbe9fa;
+  color: #94202b;
+}
+/**************************************/
+/* CHARACTER LIST STYLING*/
+
+#character_list_container {
+  position: relative;
+  padding: 4rem;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.teacher-list {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1.2rem;
+}
+
+.teacher {
+  list-style: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    " name image "
+    " house image ";
+  text-align: left;
+}
+
+.teacher > h2 {
+  grid-area: name;
+  margin-bottom: 0px;
+}
+
+.teacher > p {
+  grid-area: house;
+  margin: 0;
+  margin-top: -10px;
+}
+
+.teacher > img {
+  max-height: 150px;
+  grid-area: image;
+}
+
+.default-image {
+  border-radius: 6px;
+}
+.teacher-patronus {
+  grid-area: patronus;
+  margin: 0;
+  margin-top: 3px;
+  visibility: hidden;
+  background-color: #94202b;
+}
