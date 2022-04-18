@@ -22,23 +22,24 @@ function filterByHouse(houseName) {
         );
     });
     displayCharacters(filteredCharacters);
-}
+};
 
 function addStudent() {
 	let inputName = document.getElementById("input-name")
 	let inputHouse = document.getElementById("input-house")
 	let inputAge = document.getElementById("input-age")
-	let inputAlive = document.getElementById("input-alive")
+	let inputAlive = document.getElementById("alive-select")
 	let inputImage = document.getElementById("input-image")
+	let aliveBooleanValue = (inputAlive.value == "true");
 
-	if (inputName.value, inputHouse.value, inputAge.value, inputAlive.value === "") {
+	if (inputName.value, inputHouse.value, inputAge.value === "") {
 		alert("Please fill out all the input fields")
-	} else if (["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(inputHouse.value.toLowerCase())) {
+	} else if(["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(inputHouse.value.toLowerCase())) {
 		allCharacters.push({
 			name: inputName.value,
 			house: inputHouse.value,
-			age: inputAge.value,
-			alive: inputAlive.value,
+			yearOfBirth: parseInt(inputAge.value),
+			alive: aliveBooleanValue,
 			image: inputImage.value,
 		});
 		filterByHouse(inputHouse.value.toLowerCase());
@@ -76,6 +77,7 @@ function displayCharacters(characters) {
 		if(characterBirthYear === "") {
 			characterAge = "<p class='age'>Age: unknown</p>"
 		}
+		
 		if(characterAlive === false) {
 			characterAge = "";
 			characterAliveText = "<p class='dead'>This character is dead</p>"

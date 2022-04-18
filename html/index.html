@@ -37,9 +37,12 @@
 						<input type="text" placeholder="Name" id="input-name" /><br>
 						<input type="text" placeholder="House" id="input-house" /><br>
 						<input type="number" placeholder="Year of birth" id="input-age" /><br>
-						<input type="text" placeholder="Alive?" id="input-alive" /><br>
+						<select name="alive?" id="alive-select">
+							<option value="true">Alive</option>
+							<option value="false">Dead</option>
+						</select><br>
 						<input type="text" placeholder="Image URL" id="input-image"><br>
-						<button onclick="addStudent()">Legg til</button>
+						<button onclick="addStudent()">Add student</button>
 					</div>	
 				</div>
 				<ul id="charactersList"></ul>
