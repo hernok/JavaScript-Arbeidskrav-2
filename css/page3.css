@@ -19,6 +19,58 @@ body {
   font-family: "Lobster", cursive;
   font-weight: 400;
 }
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  justify-content: center;
+  text-decoration: none;
+}
+.nav-wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0 10px 0 10px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  justify-content: center;
+  background-color: rgb(255, 207, 148);
+  border: 2px solid rgb(250, 183, 101);
+}
+.nav {
+  color: inherit;
+  text-decoration: none;
+  font-size: 30px;
+  margin: -1px;
+  display: inline-block;
+  position: relative;
+}
+.nav,
+.nav:hover,
+.nav:focus,
+.nav:active {
+  text-decoration: none;
+}
+.nav:after {
+  content: "";
+  position: absolute;
+}
+.nav-wrapper .nav::after {
+  top: 100%;
+  height: 5px;
+  width: 0%;
+  left: 5%;
+  background-color: rgb(252, 153, 32);
+  transition: 0.5s ease all 0.3s;
+}
+
+.nav-wrapper:hover .nav::after {
+  width: 90%;
+  transition: 0.3s ease all;
+}
 /**************************************/
 
 .spell_bubble {
@@ -83,14 +135,6 @@ body {
 }
 
 .delete-btn {
-  height: 1.5rem;
-  width: 4rem;
-  cursor: pointer;
-  font-size: 0.7rem;
-  margin: 0 0.15rem;
-}
-
-.delete-btn {
   border: none;
   border-radius: 6px;
   background-color: #f0f7ff;
@@ -110,44 +154,111 @@ body {
   max-width: 1000px;
   text-align: center;
 }
-
-.teacher-list {
-  padding-inline-start: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1.2rem;
-}
-
-.teacher {
+.teacher-gryffindor {
   list-style: none;
   border-radius: 6px;
-  padding: 10px 20px;
+  border: 5px solid black;
+  padding: 5px 5px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
     " name image "
-    " house image ";
+    " house image "
+    " age image"
+    " alive image";
   text-align: left;
+  background-color: #ae4a4a;
+  color: #febc42;
+}
+.teacher-ravenclaw {
+  list-style: none;
+  border-radius: 6px;
+  border: 5px solid black;
+  padding: 5px 5px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    " name image "
+    " house image "
+    " age image"
+    " alive image";
+  text-align: left;
+  background-color: #382982;
+  color: #f7c665;
+}
+.teacher-hufflepuff {
+  list-style: none;
+  border-radius: 6px;
+  border: 5px solid black;
+  padding: 5px 5px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    " name image "
+    " house image "
+    " age image"
+    " alive image";
+  text-align: left;
+  background-color: #fae675;
+  color: #590a59;
+}
+.teacher-slytherin {
+  list-style: none;
+  border-radius: 6px;
+  border: 5px solid black;
+  padding: 5px 5px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    " name image "
+    " house image "
+    " age image"
+    " alive image";
+  text-align: left;
+  background-color: #3b9e82;
+  color: #1d3d2c;
 }
 
+.exit-btn,
+.save-btn {
+  width: 10em;
+  margin: 0.5em 1em;
+  padding: 0.7em;
+  border-radius: 10px;
+  border: none;
+  text-transform: uppercase;
+  font-family: mr-darcy, sans-serif;
+}
+
+.teacher-list {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 20px;
+}
+.teacher {
+  list-style-type: none;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-areas:
+    "name image"
+    "house image"
+    "patronus image"
+    "delete-btn image"
+    "edit-btn image";
+  text-align: left;
+  border: 1px solid rgba(68, 83, 147, 0.8);
+  transition: transform 500ms ease-in-out;
+}
 .teacher > h2 {
   grid-area: name;
-  margin-bottom: 0px;
 }
-
-.teacher > p {
+.teacher-house {
   grid-area: house;
-  margin: 0;
-  margin-top: -10px;
-}
-
-.teacher > img {
-  max-height: 150px;
-  grid-area: image;
-}
-
-.default-image {
-  border-radius: 6px;
 }
 .teacher-patronus {
   grid-area: patronus;
@@ -155,4 +266,64 @@ body {
   margin-top: 3px;
   visibility: hidden;
   background-color: #94202b;
+  background-clip: text;
+  color: black;
+}
+
+.teacher:hover > .teacher-patronus {
+  visibility: visible;
+}
+.teacher-list > li {
+  list-style-type: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-areas:
+    "name image"
+    "house image"
+    "patronus image"
+    "delete-btn image"
+    "edit-btn image";
+  text-align: left;
+}
+
+.teacher-gryffindor:hover > .teacher-patronus,
+.teacher-slytherin:hover > .teacher-patronus,
+.teacher-ravenclaw:hover > .teacher-patronus,
+.teacher-hufflepuff:hover > .teacher-patronus {
+  visibility: visible;
+}
+
+img {
+  max-height: 150px;
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+}
+.btns {
+  border: none;
+  font-weight: 600;
+  font-style: normal;
+  width: 200px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+.delete-btn {
+  grid-area: delete-btn;
+  background-color: orange;
+}
+.edit-btn {
+  grid-area: edit-btn;
+  background-color: #dbe9fa;
+}
+.delete-btn:hover,
+.edit-btn:hover {
+  opacity: 80%;
+}
+
+.edit-teacher {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 2rem);
+  text-align: left;
 }
