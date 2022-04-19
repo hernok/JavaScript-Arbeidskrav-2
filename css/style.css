@@ -192,6 +192,8 @@ body {
 	display: grid;
 	grid-template-columns:20% 20% 20% 20% ;
 	grid-gap: 1.2rem;
+	margin-top: 30px;
+	padding-bottom: 30px;
 }
 
 .gryffindor-card {
