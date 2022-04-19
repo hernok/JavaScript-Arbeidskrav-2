@@ -5,14 +5,58 @@
 	padding: 0;
 }
 .navbar{
+	margin: 0;
+	padding: 0;
 	height: 50px;
 	display: flex;
+	width: 100%;
 	flex-grow: 1;
-	justify-content: cen;
+	justify-content: center;
+	text-decoration: none;
 }
-.navbar > div{
-	
+.nav-wrapper{
+	position: relative;
+	margin: 0;
+	padding: 0 10px 0 10px;
+	text-align: center;
+	display: block;
+ 	cursor: pointer;
+ 	justify-content: center;
+	background-color: rgb(255, 207, 148);
+	border: 2px solid rgb(250, 183, 101);
 }
+.nav {
+	color: inherit;
+  	text-decoration: none;
+	font-size: 30px;
+	margin: -1px;
+	display: inline-block;
+  	position: relative;
+}
+.nav,
+.nav:hover,
+.nav:focus, 
+.nav:active {
+	text-decoration: none;
+}
+.nav:after{
+	content: "";
+	position: absolute;
+}
+.nav-wrapper .nav::after {
+	top: 100%;
+	height: 5px;
+	width: 0%;
+	left: 5%;
+	background-color: rgb(252, 153, 32);
+	transition: 0.5s ease all .3s;
+}
+
+.nav-wrapper:hover .nav::after {
+	width: 90%;
+    transition: 0.3s ease all;
+}
+
 h1 {
 	text-align: center;
 	font-size: 3rem;
