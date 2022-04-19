@@ -171,3 +171,28 @@ function deleteTeacher(index, staffMembers) {
   }
   displayTeachers(staffMembers);
 }
+
+function addTeacher() {
+  let inputName = document.getElementById("input-name");
+  let inputHouse = document.getElementById("input-house");
+  let inputPatronus = document.getElementById("input-patronus");
+  let inputImage = document.getElementById("input-image");
+
+  if ((inputName.value, inputHouse.value, inputPatronus.value === "")) {
+    alert("Please fill out all the input fields");
+  } else if (
+    ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(
+      inputHouse.value.toLowerCase()
+    )
+  ) {
+    allCharacters.push({
+      name: inputName.value,
+      house: inputHouse.value,
+      patronus: inputPatronus.value,
+      image: inputImage.value,
+    });
+    filterByHouse(inputHouse.value.toLowerCase());
+  } else {
+    alert("Please use an existing house name such as Gryffindor or Slytherin");
+  }
+}
