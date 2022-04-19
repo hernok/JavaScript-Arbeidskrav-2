@@ -7,11 +7,13 @@ searchBar.addEventListener("keyup", function(e) {
     let searchString = e.target.value.toLowerCase();
     let filteredCharacters = allCharacters.filter(function(character) {
         return (
-            character.name.toLowerCase().includes(searchString) ||
-            character.house.toLowerCase().includes(currentHouse)
+            character.name.toLowerCase().includes(searchString)
         );
     });
     displayCharacters(filteredCharacters);
+	if(searchBar.value === ""){
+		charactersList.innerHTML = "";
+	}
 });	
 
 function filterByHouse(houseName) {
@@ -88,8 +90,8 @@ function displayCharacters(characters) {
 
 		characterElement = document.createElement("div");
 		characterElement.innerHTML =
-			`<li class="hp-characters ${characterHouse.toLowerCase()}-card">
-				<h3 class="name">${characterName}</h3>
+			`<li class="hp-characters ${characterHouse.toLowerCase()}-card grow">
+				<h2 class="name">${characterName}</h2>
 				<p class="banner">House: ${characterHouse}</p> 
 				${characterAge}
 				${characterAliveText}

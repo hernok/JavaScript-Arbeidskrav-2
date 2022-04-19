@@ -3,7 +3,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: 0;
 }
 
 h1 {
@@ -31,15 +30,16 @@ body {
 
 #banner-img {
 	height: 300px;
-	cursor: pointer;
 	padding-top: 2rem;
 }
 
 .banner {
 	display:flex;
 	flex-direction: column;
-	
 	gap:20px;
+}
+.banner:hover{
+	cursor: pointer;	  
 }
 
 .banner_btn  {
@@ -50,6 +50,11 @@ body {
 	font-weight: 500;
 	max-width: 280px;
 	margin-left:16px;
+	transition: transform .3s;;
+}
+.banner_btn:hover{
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
 .hufflepuff {
@@ -171,8 +176,10 @@ body {
 }
 
 .hp-characters > h2 {
+	font-size: 25px;
 	grid-area: name;
 	margin-bottom: 0px;
+	height: 40px;
 }
 
 .hp-characters > .house {
@@ -200,6 +207,8 @@ body {
 .dead{
 	color:red;
 	margin-top: 10px;
+	
+	text-shadow: 1px 1px black;
 }
 
 .hidden-house {
@@ -223,6 +232,9 @@ body {
 	border: 2px solid black;
 	margin: 10px;
 }
-.-card{
-	display: none;
+.grow {
+  transition: transform .3s;;
+}
+.grow:hover {
+  transform: scale(1.5);
 }
