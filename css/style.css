@@ -118,6 +118,8 @@ body {
 	  " age image"
 	  " alive image";
 	text-align: left;
+	background-color: #ae4a4a;
+	color:#febc42;
 }
 .ravenclaw-card {
 	list-style: none;
@@ -132,6 +134,8 @@ body {
 	  " age image"
 	  " alive image";
 	text-align: left;
+	background-color: #382982;
+	color:#f7c665;
 }
 .hufflepuff-card {
 	list-style: none;
@@ -146,6 +150,8 @@ body {
 	  " age image"
 	  " alive image";
 	text-align: left;
+	background-color: #fae675;
+	color:#590a59;
 }
 .slytherin-card {
 	list-style: none;
@@ -160,6 +166,8 @@ body {
 	  " age image"
 	  " alive image";
 	text-align: left;
+	background-color: #3b9e82;
+	color:#204431;
 }
 
 .hp-characters > h2 {
