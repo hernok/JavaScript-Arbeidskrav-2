@@ -4,7 +4,15 @@
 	margin: 0;
 	padding: 0;
 }
-
+.navbar{
+	height: 50px;
+	display: flex;
+	flex-grow: 1;
+	justify-content: cen;
+}
+.navbar > div{
+	
+}
 h1 {
 	text-align: center;
 	font-size: 3rem;
@@ -82,11 +90,43 @@ body {
 	grid-template-columns: 20% 20%;
 	justify-content: space-evenly ;
 }
+
+#inputs > input{
+	margin: 1px;
+	height: 25px;
+	font-size: 25px;
+	border-radius: 5px;
+	border: solid gray 1.2px;
+}
+
+#alive-select{
+	height: 25px;
+	width: 70px;
+	font-size: 17px;
+	font-weight: 200;
+}
+
+.add-student-btn{
+	margin-top: 4px;
+	width:150px;
+	height: 25px;
+	font-size: 17.5px;
+	border-radius: 4px;
+	border: solid gray 1.2px;
+	color: #f2f2f2;
+	background-color: rgb(7, 99, 7);
+}
+#searchBar::placeholder{   
+    text-align: center;
+}
 #searchBar{
+	width: 280px;
 	height: 35px;
 	font-size: 25px;
 	border-radius: 5px;
+	border: solid gray 1.2px;
 }
+
 
 #searchWrapper{
 	display: grid;
@@ -225,9 +265,6 @@ body {
 	list-style: none;
 }
 
-#house {
-	font-size: 3000px;
-}
 .character{
 	border: 2px solid black;
 	margin: 10px;
@@ -236,5 +273,5 @@ body {
   transition: transform .3s;;
 }
 .grow:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
