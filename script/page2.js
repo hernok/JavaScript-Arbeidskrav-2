@@ -17,6 +17,8 @@ classRoomBtn.addEventListener("click", e => {
         document.getElementById('start-classroom').disabled = true;
         setTimeout(function(){document.getElementById('start-classroom').disabled = false;},1000);      
 })
+
+
 /** Loads in the teacher as soon as webpage opens**/
 snapesList.addEventListener("load", loadTeacher());
 
