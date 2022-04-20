@@ -80,7 +80,7 @@ if(onlyTenChars.image === ""){
             <li class="snapes_list">
             <h2>${teacherInfo.name}</h2>
             <p class="s_house">House: ${teacherInfo.house}</p>
-            <p class="s_age">Age: ${teacherInfo.dateOfBirth}</p>
+            <p class="s_age">Age: ${parseInt(2022 - teacherInfo.yearOfBirth)}</p>
             <p class="s_wand">Wand: ${wandInfo.wood}</p>
             <img src="${teacherInfo.image}"></img>
             </li>
