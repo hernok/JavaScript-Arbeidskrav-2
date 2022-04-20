@@ -166,6 +166,22 @@ exitBtn.addEventListener("click", () => {
   teacherCard.style.display = "grid";
 });
 
+function saveEditedInfo(
+  i,
+  staffMembers,
+  editedName,
+  editedHouse,
+  editedPatronus
+) {
+  staffMembers[i] = {
+    ...staffMembers[i],
+    name: editedName,
+    house: editedHouse,
+    patronus: editedPatronus,
+  };
+  displayTeachers(staffMembers);
+}
+
 function deleteTeacher(index, staffMembers) {
   let userConfirm = prompt(
     "Do you want to delete this teacher from list? yes/no"
