@@ -62,7 +62,7 @@ function displayTeachers(staffMembers) {
       teacherCard.classList.add("teacher-hufflepuff");
     } else if (staffMembers[i].house.toLowerCase() == "ravenclaw") {
       teacherCard.classList.add("teacher-ravenclaw");
-    } else{
+    } else {
       teacherCard.classList.add("teacher");
       teacherHouse.innerText = `House: Unknown`;
     }
@@ -176,11 +176,17 @@ function addTeacher() {
   let inputName = document.getElementById("input-name");
   let inputPatronus = document.getElementById("input-patronus");
   let inputHouse = document.getElementById("input-house");
-  if (inputName == "" || inputPatronus == "") {
+  if (
+    inputName.value == "" ||
+    inputPatronus.value == "" ||
+    inputHouse.value == ""
+  ) {
     alert("Fill in all the information");
-  }
-   else if (
-    ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(inputHouse.value.toLowerCase())) {
+  } else if (
+    ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(
+      inputHouse.value.toLowerCase()
+    )
+  ) {
     let userAnswer = prompt("Do you want to save this New Teacher? yes/no");
     if (userAnswer == "yes") {
       staffMembers.push({
