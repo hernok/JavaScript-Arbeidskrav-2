@@ -172,13 +172,14 @@ function deleteTeacher(index, staffMembers) {
 //
 //
 function addTeacher() {
-  let inputImage = "input-image";
+  let inputImage = "/assets/global/defaultimage.png";
   let inputName = document.getElementById("input-name");
   let inputPatronus = document.getElementById("input-patronus");
   let inputHouse = document.getElementById("input-house");
   if (inputName == "" || inputPatronus == "") {
     alert("Fill in all the information");
-  } else if (
+  }
+   else if (
     ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(
       inputHouse.value.toLowerCase()
     )
@@ -189,7 +190,7 @@ function addTeacher() {
         name: inputName.value,
         house: inputHouse.value,
         patronus: inputPatronus.value,
-        image: inputImage.value,
+        image: inputImage,
       });
       alert("New Teacher saved");
     } else {
