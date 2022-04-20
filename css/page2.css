@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 2rem 0;
+}
+
+body {
+  position: relative;
+  background-color: bisque;
+  height: 100vh;
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+}
+/*Styles the main container. There is a small shift 
+because of the hidden bubble which is inside the Snapes container*/ 
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    " banner banner "
+    " title title "
+    " snapes classroom "
+    " button classroom "
+    " .  classroom ";
+
+}
+
+.title- {
+  grid-area: title;
+}
+
+/**************************************/
+/*Styles the banners on top of the screen*/
+#house-banners {
+  position: relative;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  margin: 1rem 0;
+  grid-area: banner;
+}
+
+#banner-img {
+  height: 300px;
+  cursor: pointer;
+  padding-top: 2rem;
+}
+
+.banner {
+  display:flex;
+  flex-direction: column;
+  justify-self: center;
+  gap:20px;
+}
+
+.delete-btn {
+  height: 1.5rem;
+  width: 4rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  margin: 0 0.15rem;
+
+}
+
+.delete-btn {
+  border:none;
+  border-radius: 6px;
+  background-color: #f0f7ff;
+  color: #cf2d3e;
+}
+.delete-btn:hover {
+  background-color: #dbe9fa;
+  color: #94202b;
+}
+/**************************************/
+/* CHARACTER LIST STYLING*/
+
+#character_list_container {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  grid-area: classroom;
+}
+
+#characters-list {
+  margin: 1rem 2rem 0 0;
+  padding-inline-start: 0;
+  display:grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-gap: 1.2rem;
+}
+
+.hp_characters {
+  list-style: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    " name image "
+    " house image ";
+  text-align: left;
+}
+
+.hp_characters > h2 {
+  grid-area: name;
+  margin-bottom: 0px;
+}
+
+.hp_characters > p {
+  grid-area: house;
+  margin: 0;
+  margin-top: -10px;
+}
+
+.hp_characters  > img {
+  max-height: 150px;
+  grid-area: image;
+}
+
+.default-image {
+  border-radius: 6px;
+}
+
+/* Here we style our Proffessor Snapes*/
+.professor-snapes-container {
+  max-width: 600px;
+  cursor: pointer;
+  position:relative;
+  display: flex;
+  grid-area:snapes;
+  
+}
+.snapes_list {
+  background-color: #48389a;
+  color:#f7c665;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    " name image "
+    " house image "
+    " age  image "
+    " wand image";
+  text-align: left;
+}
+
+.snapes_list > h2 {
+  grid-area: name;
+  margin-bottom: 0px;
+   position: relative;
+}
+.snapes_list  > img {
+  max-height: 150px;
+  grid-area: image;
+}
+
+.s_house {
+  grid-area: house;
+  margin: 0;
+}
+.s_age {
+  grid-area: age;
+  margin:0;
+}
+.wand {
+  grid-area: wand;
+  margin:0;
+}
+
+/****************SPELL BUBBLE**********************/
+
+.spell_bubble {
+  height: 10rem;
+  opacity: 0;
+}
+.professor-snapes-container:hover .spell_bubble{
+  opacity: 1;
+}
+
+#start-classroom {
+cursor: pointer;
+padding: 0.8rem 2rem;
+ border: none;
+ border-radius: 10px;
+ font-size: 1.1rem;
+ font-weight: 500;
+ margin:16px;
+ background-color: #382982;
+ color:#f7c665;
+}
+
+#start-classroom:hover {
+  transform: scale(1.05);
+}
