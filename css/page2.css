@@ -19,14 +19,22 @@ body {
   font-family: 'Lobster', cursive;
   font-weight: 400;
 }
-/**************************************/
+/*Styles the main container. There is a small shift 
+because of the hidden bubble which is inside the Snapes container*/ 
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    " banner banner "
+    " title title "
+    " snapes classroom "
+    " button classroom "
+    " .  classroom ";
 
+}
 
-.spell_bubble {
-  position: absolute;
-  height: 10rem;
-  margin: 0 0 0 2rem;
-  visibility: hidden;
+.title- {
+  grid-area: title;
 }
 
 /**************************************/
@@ -38,6 +46,7 @@ body {
   justify-content: center;
   justify-items: center;
   margin: 1rem 0;
+  grid-area: banner;
 }
 
 #banner-img {
@@ -51,36 +60,6 @@ body {
   flex-direction: column;
   justify-self: center;
   gap:20px;
-}
-/**************************************/
-/*Here comes some button styling for our page*/
-.banner_btn  {
- padding: 1rem 2rem;
- border: none;
- border-radius: 10px;
- font-size: 1.1rem;
- font-weight: 500;
- max-width: 280px;
- margin-left:16px;
-}
-.huffelpuff {
-  background-color: #fae675;
-  color:#590a59;
-}
-.gryffindor {
-  background-color: #ae4a4a;
-  color:#febc42;
-}
-.ravenclaw {
-  background-color: #382982;
-  color:#f7c665;
-}
-.slytherin {
-  background-color: #3b9e82;
-  color:#204431;
-}
-.classroom-button {
-  position: relative;
 }
 
 .delete-btn {
@@ -107,16 +86,16 @@ body {
 
 #character_list_container {
   position: relative;
-  padding: 4rem;
   margin: 0 auto;
-  max-width: 1000px;
   text-align: center;
+  grid-area: classroom;
 }
 
 #characters-list {
+  margin: 1rem 2rem 0 0;
   padding-inline-start: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display:grid;
+  grid-template-columns: repeat(5,1fr);
   grid-gap: 1.2rem;
 }
 
@@ -154,12 +133,11 @@ body {
 
 /* Here we style our Proffessor Snapes*/
 .professor-snapes-container {
+  max-width: 600px;
   cursor: pointer;
   position:relative;
   display: flex;
-  flex-direction: row;
-  justify-self: center;
-  margin-left:10px;
+  grid-area:snapes;
   
 }
 .snapes_list {
@@ -172,7 +150,9 @@ body {
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
     " name image "
-    " house image ";
+    " house image "
+    " age  image "
+    " wand image";
   text-align: left;
 }
 
@@ -186,21 +166,32 @@ body {
   grid-area: image;
 }
 
-.snapes_list  > p {
+.s_house {
   grid-area: house;
   margin: 0;
-  margin-top: -18px;
+}
+.s_age {
+  grid-area: age;
+  margin:0;
+}
+.wand {
+  grid-area: wand;
+  margin:0;
 }
 
-.snapes_list:hover {
- transform: scale(1.1);
+/****************SPELL BUBBLE**********************/
+
+.spell_bubble {
+  height: 10rem;
+  opacity: 0;
 }
-.snapes_list:hover + .spell_bubble{
-  visibility: visible;
+.professor-snapes-container:hover .spell_bubble{
+  opacity: 1;
 }
 
 #start-classroom {
-  padding: 0.8rem 2rem;
+cursor: pointer;
+padding: 0.8rem 2rem;
  border: none;
  border-radius: 10px;
  font-size: 1.1rem;
@@ -208,4 +199,8 @@ body {
  margin:16px;
  background-color: #382982;
  color:#f7c665;
+}
+
+#start-classroom:hover {
+  transform: scale(1.05);
 }

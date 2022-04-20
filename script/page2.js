@@ -12,10 +12,10 @@ let randomCharacters = []; // This is where the random students api info will be
 classRoomBtn.addEventListener("click", e => {
     characterList.innerHTML = "";
     for(i = 0; i < 10; i++){
-        displayrandomCharacters()
+        displayrandomCharacters();
         }
 })
-
+/** Loads in the teacher as soon as webpage opens**/
 snapesList.addEventListener("load", loadTeacher());
 
 //*** */
@@ -55,7 +55,9 @@ if(onlyTenChars.image === ""){
         </li>
     `;    
     characterList.append(htmlString);
-}         
+}   
+    const deleteBtn = characterList.querySelector('.delete-btn');
+    deleteBtn.addEventListener("click", deleteStudent);
     let colors = ['#ff0000', '#00ff00', '#0000ff' , 'teal', 'rosybrown', 'tan', 'plum', 'saddlebrown'];
     var potterCharacters = document.querySelectorAll(".hp_characters");
  
@@ -71,17 +73,30 @@ if(onlyTenChars.image === ""){
         }catch (error){
             console.error(error);
     } teacherInfo = snapesInfo[1];
+    wandInfo = snapesInfo[1].wand;
     teacherHtmlString = document.createElement("ul");
     teacherHtmlString.innerHTML = 
             `
             <li class="snapes_list">
             <h2>${teacherInfo.name}</h2>
-            <p>House: ${teacherInfo.house}</p>
+            <p class="s_house">House: ${teacherInfo.house}</p>
+            <p class="s_age">Age: ${teacherInfo.dateOfBirth}</p>
+            <p class="s_wand">Wand: ${wandInfo.wood}</p>
             <img src="${teacherInfo.image}"></img>
             </li>
             `;
             snapesList.append(teacherHtmlString);
-   
     }
  
-
+    function deleteStudent(e) {
+        const userConfirm = prompt("Do you wish to remove student? yes / no").toLowerCase();
+        if(userConfirm == "yes") {{
+            randomCharacters.splice(e,1);
+            const element = e.currentTarget.parentElement.parentElement;
+            characterList.removeChild(element);
+            alert("student successfully removed")
+            displayrandomCharacters()
+        }
+    } else 
+    alert("student is not removed from class"); 
+    }
