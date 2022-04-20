@@ -10,7 +10,6 @@ let randomCharacters = []; // This is where the random students api info will be
 
 /**EVENT LISTENERS **/
 classRoomBtn.addEventListener("click", e => {
- 
     characterList.innerHTML = "";
     for(i = 0; i < 10; i++){
         displayrandomCharacters();
@@ -24,12 +23,16 @@ snapesList.addEventListener("load", loadTeacher());
 //*** */
 async function displayrandomCharacters() {
     try {
-        const res = await fetch('https://hp-api.herokuapp.com/api/characters');
+        const res = await fetch('http://hp-api.herokuapp.com/api/characters/students');
         randomCharacters = await res.json();
     } catch (error){
         console.error(error);
     }
+	
     let onlyTenChars = randomCharacters[Math.floor(Math.random() * randomCharacters.length)]; 
+	if(onlyTenChars.house === ""){
+    onlyTenChars.house = "unknown"
+}
 if(onlyTenChars.image === ""){
     const htmlString = document.createElement("ul"); 
     htmlString.innerHTML =
