@@ -10,6 +10,7 @@ let randomCharacters = []; // This is where the random students api info will be
 
 /**EVENT LISTENERS **/
 classRoomBtn.addEventListener("click", e => {
+ 
     characterList.innerHTML = "";
 	  var btn = $(this);
   btn.prop('disabled', true);
@@ -47,7 +48,9 @@ if(onlyTenChars.image === ""){
                     <i class="fas fa-trash"></i>
                   </button>
         </li>
-    `; 
+    `;      
+            const deleteBtn = htmlString.querySelector('.delete-btn');
+            deleteBtn.addEventListener("click", deleteStudent);
             characterList.append(htmlString);
 }else{
     const htmlString = document.createElement("ul");
@@ -61,17 +64,15 @@ if(onlyTenChars.image === ""){
                     <i class="fas fa-trash"></i>
                   </button>
         </li>
-    `;    
-    characterList.append(htmlString);
+    `;
+            const deleteBtn = htmlString.querySelector('.delete-btn');
+            deleteBtn.addEventListener("click", deleteStudent);    
+            characterList.append(htmlString);
 }   
-    const deleteBtn = characterList.querySelector('.delete-btn');
-    deleteBtn.addEventListener("click", deleteStudent);
-    let colors = ['#ff0000', '#00ff00', '#0000ff' , 'teal', 'rosybrown', 'tan', 'plum', 'saddlebrown'];
     var potterCharacters = document.querySelectorAll(".hp_characters");
- 
     for(i = 0; i < potterCharacters.length; i++){
-    potterCharacters[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    }    
+    potterCharacters[i].style.backgroundColor = randomColor();
+    } 
 }
 
     async function loadTeacher() {
@@ -83,6 +84,23 @@ if(onlyTenChars.image === ""){
     } teacherInfo = snapesInfo[1];
     wandInfo = snapesInfo[1].wand;
     teacherHtmlString = document.createElement("ul");
+    let today = new Date();
+    let currentYear = today.getFullYear();
+
+
+    if (wandInfo.wood === "") {
+        teacherHtmlString.innerHTML = 
+        `
+        <li class="snapes_list">
+        <h2>${teacherInfo.name}</h2>
+        <p class="s_house">House: ${teacherInfo.house}</p>
+        <p class="s_age">Age: ${parseInt(currentYear - teacherInfo.yearOfBirth)}</p>
+        <p class="s_wand">Wand: Unknown </p>
+        <img src="${teacherInfo.image}"></img>
+        </li>
+        `;
+        snapesList.append(teacherHtmlString);
+    }else {
     teacherHtmlString.innerHTML = 
             `
             <li class="snapes_list">
@@ -94,8 +112,10 @@ if(onlyTenChars.image === ""){
             </li>
             `;
             snapesList.append(teacherHtmlString);
+
     }
- 
+    }
+    /* This function allows us to delete the student properly*/
     function deleteStudent(e) {
         const userConfirm = prompt("Do you wish to remove student? yes / no").toLowerCase();
         if(userConfirm == "yes") {{
@@ -107,4 +127,13 @@ if(onlyTenChars.image === ""){
         }
     } else 
     alert("student is not removed from class"); 
+    }
+    /* This function runs makes the random numbers which will make the color randomized*/ 
+    function randomColor() {
+        let letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
     }
