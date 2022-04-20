@@ -93,27 +93,21 @@ body {
 
 #banner-img {
   height: 300px;
-  cursor: pointer;
   padding-top: 2rem;
 }
 
 .banner {
   display: flex;
   flex-direction: column;
-  justify-self: center;
   gap: 20px;
 }
+.banner:hover {
+  cursor: pointer;
+}
+
 /**************************************/
 /*Here comes some button styling for our page*/
-.banner_btn {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  max-width: 280px;
-  margin-left: 16px;
-}
+
 .huffelpuff {
   background-color: #fae675;
   color: #590a59;
