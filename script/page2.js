@@ -35,7 +35,7 @@ if(onlyTenChars.image === ""){
             <li class="hp_characters">
             <h2>${onlyTenChars.name}</h2>
             <p>House: ${onlyTenChars.house}</p>
-            <img class ="default-image" src="/img/defaultimage.png"></img>
+            <img class ="default-image" src="/assets/global/defaultimage.png"></img>
             <button type="button" class="delete-btn">
                     <i class="fas fa-trash"></i>
                   </button>
@@ -98,7 +98,7 @@ if(onlyTenChars.image === ""){
             <li class="snapes_list">
             <h2>${teacherInfo.name}</h2>
             <p class="s_house">House: ${teacherInfo.house}</p>
-            <p class="s_age">Age: ${parseInt(currentYear - teacherInfo.yearOfBirth)}</p>
+            <p class="s_age">Age: ${parseInt(2022 - teacherInfo.yearOfBirth)}</p>
             <p class="s_wand">Wand: ${wandInfo.wood}</p>
             <img src="${teacherInfo.image}"></img>
             </li>
