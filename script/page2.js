@@ -34,7 +34,7 @@ if(onlyTenChars.image === ""){
             <li class="hp_characters">
             <h2>${onlyTenChars.name}</h2>
             <p>House: ${onlyTenChars.house}</p>
-            <img class ="default-image" src="/img/defaultimage.png"></img>
+            <img class ="default-image" src="/assets/global/defaultimage.png"></img>
             <button type="button" class="delete-btn">
                     <i class="fas fa-trash"></i>
                   </button>
