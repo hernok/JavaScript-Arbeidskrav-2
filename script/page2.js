@@ -14,6 +14,8 @@ classRoomBtn.addEventListener("click", e => {
     for(i = 0; i < 10; i++){
         displayrandomCharacters();
         }
+        document.getElementById('start-classroom').disabled = true;
+        setTimeout(function(){document.getElementById('start-classroom').disabled = false;},1000);      
 })
 
 
@@ -34,6 +36,10 @@ async function displayrandomCharacters() {
     onlyTenChars.house = "unknown"
 }
 if(onlyTenChars.image === ""){
+    if(onlyTenChars.house === ""){
+        onlyTenChars.house = "unknown"
+    }
+    
     const htmlString = document.createElement("ul"); 
     htmlString.innerHTML =
              `
