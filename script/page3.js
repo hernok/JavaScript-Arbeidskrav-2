@@ -29,30 +29,6 @@ function renderData(data) {
   console.log(staffMembers);
   return staffMembers;
 }
-function addTeacher() {
-  let inputName = document.getElementById("input-name");
-  let inputHouse = document.getElementById("input-house");
-  let inputPatronus = document.getElementById("input-patronus");
-  let inputImage = document.getElementById("input-image");
-
-  if (inputName == "" || inputPatronus == "") {
-    alert("Please fill out all the input fields");
-  } else if (
-    ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(
-      inputHouse.value.toLowerCase()
-    )
-  ) {
-    staffMembers.push({
-      name: inputName,
-      house: inputHouse,
-      patronus: inputPatronus,
-      image: inputImage.value,
-    });
-    filterStaffMembers(inputHouse.value.toLowerCase());
-  } else {
-    alert("Please use an existing house name such as Gryffindor or Slytherin");
-  }
-}
 
 const teacherList = document.querySelector(".teacher-list");
 
@@ -193,3 +169,34 @@ function deleteTeacher(index, staffMembers) {
   }
   displayTeachers(staffMembers);
 }
+//
+//
+function addTeacher() {
+  let inputImage = "/assets/global/defaultimage.png";
+  let inputName = document.getElementById("input-name");
+  let inputPatronus = document.getElementById("input-patronus");
+  let inputHouse = document.getElementById("input-house");
+  if (inputName == "" || inputPatronus == "") {
+    alert("Fill in all the information");
+  } else if (
+    ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(
+      inputHouse.value.toLowerCase()
+    )
+  ) {
+    let userAnswer = prompt("Do you want to save this New Teacher? yes/no");
+    if (userAnswer == "yes") {
+      staffMembers.push({
+        name: inputName,
+        house: inputHouse,
+        patronus: inputPatronus,
+        image: inputImage,
+      });
+      alert("New Teacher saved");
+    } else {
+      alert("No New teacher saved");
+    }
+  }
+  displayTeachers(staffMembers);
+}
+//
+//
