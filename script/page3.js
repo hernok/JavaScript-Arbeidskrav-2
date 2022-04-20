@@ -172,7 +172,7 @@ function deleteTeacher(index, staffMembers) {
 //
 //
 function addTeacher() {
-  let inputImage = "/assets/global/defaultimage.png";
+  let inputImage = "input-image";
   let inputName = document.getElementById("input-name");
   let inputPatronus = document.getElementById("input-patronus");
   let inputHouse = document.getElementById("input-house");
@@ -186,10 +186,10 @@ function addTeacher() {
     let userAnswer = prompt("Do you want to save this New Teacher? yes/no");
     if (userAnswer == "yes") {
       staffMembers.push({
-        name: inputName,
-        house: inputHouse,
-        patronus: inputPatronus,
-        image: inputImage,
+        name: inputName.value,
+        house: inputHouse.value,
+        patronus: inputPatronus.value,
+        image: inputImage.value,
       });
       alert("New Teacher saved");
     } else {
