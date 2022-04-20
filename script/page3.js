@@ -22,14 +22,6 @@ function filterStaffMembers(data) {
   displayTeachers(staffMembers);
   return staffMembers;
 }
-
-function filterStaffMembers(data) {
-  staffMembers = data.filter(function (data) {
-    return data.hogwartsStaff == true;
-  });
-  displayTeachers(staffMembers);
-  return staffMembers;
-}
 function renderData(data) {
   staffMembers = data.filter(function (data) {
     return data.hogwartsStaff == true;
@@ -142,23 +134,29 @@ function displayTeachers(staffMembers) {
     );
   }
 }
-let createTeacherContainer = document.querySelector(
-  ".create-teacher-container"
-);
-createTeacherContainer.style.display = "none";
-let createTeacherBtn = document.querySelector(".create-teacher-btn");
-createTeacherBtn.addEventListener("click", () => {
-  createTeacherContainer.style.display = "block";
-});
-let exitBtn = document.querySelector(".exit-btn");
+
+let exitBtn = document.createElement("button");
+exitBtn.innerText = "Exit";
 exitBtn.addEventListener("click", () => {
-  createTeacherContainer.style.display = "none";
+  editTeacherCard.style.display = "none";
+  teacherCard.style.display = "grid";
 });
 
-let saveBtn = document.querySelector(".save-btn");
-saveBtn.addEventListener("click", () => {
-  addNewTeacher();
-});
+function saveEditedInfo(
+  i,
+  staffMembers,
+  editedName,
+  editedHouse,
+  editedPatronus
+) {
+  staffMembers[i] = {
+    ...staffMembers[i],
+    name: editedName,
+    house: editedHouse,
+    patronus: editedPatronus,
+  };
+  displayTeachers(staffMembers);
+}
 
 function deleteTeacher(index, staffMembers) {
   let userConfirm = prompt(
@@ -171,28 +169,34 @@ function deleteTeacher(index, staffMembers) {
   }
   displayTeachers(staffMembers);
 }
-
+//
+//
 function addTeacher() {
+  let inputImage = "input-image";
   let inputName = document.getElementById("input-name");
-  let inputHouse = document.getElementById("input-house");
   let inputPatronus = document.getElementById("input-patronus");
-  let inputImage = document.getElementById("input-image");
-
-  if ((inputName.value, inputHouse.value, inputPatronus.value === "")) {
-    alert("Please fill out all the input fields");
+  let inputHouse = document.getElementById("input-house");
+  if (inputName == "" || inputPatronus == "") {
+    alert("Fill in all the information");
   } else if (
     ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(
       inputHouse.value.toLowerCase()
     )
   ) {
-    allCharacters.push({
-      name: inputName.value,
-      house: inputHouse.value,
-      patronus: inputPatronus.value,
-      image: inputImage.value,
-    });
-    filterByHouse(inputHouse.value.toLowerCase());
-  } else {
-    alert("Please use an existing house name such as Gryffindor or Slytherin");
+    let userAnswer = prompt("Do you want to save this New Teacher? yes/no");
+    if (userAnswer == "yes") {
+      staffMembers.push({
+        name: inputName.value,
+        house: inputHouse.value,
+        patronus: inputPatronus.value,
+        image: inputImage.value,
+      });
+      alert("New Teacher saved");
+    } else {
+      alert("No New teacher saved");
+    }
   }
+  displayTeachers(staffMembers);
 }
+//
+//
