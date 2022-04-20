@@ -54,15 +54,15 @@ function displayTeachers(staffMembers) {
     let teacherHouse = document.createElement("p");
     teacherHouse.classList.add("teacher-house");
     teacherHouse.innerText = `House: ${staffMembers[i].house}`;
-    if (staffMembers[i].house == "Gryffindor") {
+    if (staffMembers[i].house.toLowerCase() == "gryffindor") {
       teacherCard.classList.add("teacher-gryffindor");
-    } else if (staffMembers[i].house == "Slytherin") {
+    } else if (staffMembers[i].house.toLowerCase() == "slytherin") {
       teacherCard.classList.add("teacher-slytherin");
-    } else if (staffMembers[i].house == "Hufflepuff") {
+    } else if (staffMembers[i].house.toLowerCase() == "hufflepuff") {
       teacherCard.classList.add("teacher-hufflepuff");
-    } else if (staffMembers[i].house == "Ravenclaw") {
+    } else if (staffMembers[i].house.toLowerCase() == "ravenclaw") {
       teacherCard.classList.add("teacher-ravenclaw");
-    } else {
+    } else{
       teacherCard.classList.add("teacher");
       teacherHouse.innerText = `House: Unknown`;
     }
@@ -180,10 +180,7 @@ function addTeacher() {
     alert("Fill in all the information");
   }
    else if (
-    ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(
-      inputHouse.value.toLowerCase()
-    )
-  ) {
+    ["gryffindor", "hufflepuff", "slytherin", "ravenclaw"].includes(inputHouse.value.toLowerCase())) {
     let userAnswer = prompt("Do you want to save this New Teacher? yes/no");
     if (userAnswer == "yes") {
       staffMembers.push({
