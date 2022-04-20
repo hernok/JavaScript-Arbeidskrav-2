@@ -11,10 +11,18 @@ let randomCharacters = []; // This is where the random students api info will be
 /**EVENT LISTENERS **/
 classRoomBtn.addEventListener("click", e => {
     characterList.innerHTML = "";
+	  var btn = $(this);
+  btn.prop('disabled', true);
+  setTimeout(function(){
+    btn.prop('disabled', false);
+  },200);
     for(i = 0; i < 10; i++){
         displayrandomCharacters();
         }
 })
+
+/** Button Cooldown **/
+
 /** Loads in the teacher as soon as webpage opens**/
 snapesList.addEventListener("load", loadTeacher());
 
