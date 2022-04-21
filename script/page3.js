@@ -74,7 +74,7 @@ function displayTeachers(staffMembers) {
       teacherPatronus.innerText = `Patronus: ${staffMembers[i].patronus}`;
     }
     let teacherImage = document.createElement("img");
-    teacherImage.classList.add("image");
+    teacherImage.classList.add("teacher-img");
     if (staffMembers[i].image == "") {
       teacherImage.src = "/assets/global/defaultimage.png";
     } else {
